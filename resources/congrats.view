@@ -1,0 +1,8 @@
+<svg id="finishedPage">
+    <image id="image" href="background.png" width="100%" height="100%"/>
+    <text id="workoutHeader" x="50%" y="10%" font-family="System-Regular" fill="fb-white" font-size="30" font-weight="bold" text-anchor="middle">Congrats!</text>
+    <textarea id="workoutInstructions" x="10%" y="15%" width="100%-50" font-family="System-Regular" fill="black" font-size="20">You've completed the program!  If you can now do 100 pushups show us your progress!  Post on social media using #100pushups.  If you cannot don't fret, we'll start back at Week 6 and try some more!</textarea>
+    <use id="btn-workout-next" href="#text-button" class="text-button bottom application-fill">
+        <set href="#text" attributeName="text-buffer" to="Next!" />
+    </use>
+</svg>

@@ -1,0 +1,9 @@
+<svg id="workoutPage">
+    <image id="image" href="background.png" width="100%" height="100%"/>
+    <text id="workoutHeader" x="50%" y="10%" font-family="System-Regular" fill="fb-white" font-size="30" font-weight="bold" text-anchor="middle">Workout Title</text>
+    <textarea id="workoutInstructions" x="10%" y="15%" width="100%-50" font-family="System-Regular" fill="black" font-size="24">Complete your maximum number of pushups</textarea>
+    <use id="btn-workout-next" href="#text-button" class="text-button bottom application-fill">
+        <set href="#text" attributeName="text-buffer" to="Go!" />
+    </use>
+    <text id="workoutCount" x="50%" y="50%" font-family="System-Regular" fill="white" font-size="60" font-weight="bold" text-anchor="middle" text-length="32"></text>
+</svg>
