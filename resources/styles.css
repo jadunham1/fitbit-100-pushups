@@ -1,0 +1,114 @@
+/*text     {
+  font-size: 32;
+  font-family: System-Regular;
+  font-weight: regular;
+  y: 12;
+  text-length: 32;
+}*/
+
+textarea {
+  font-size: 32;
+  font-family: System-Regular;
+  font-weight: regular;
+  y: 12;
+  text-length: 1024;
+}
+
+
+.item-header     { x: 0; y: 0; width: 100%; height: 25 }
+.item            { x: 0; y: 0; width: 100%; height: 117; }
+.item-footer     { x: 0; y: 0; width: 100%; height: 20; }
+.my-item { font-size: 100; font-family: Seville-Book; fill: white; x: 15%; y: 50%;}
+.tile-divider-bottom {
+  fill: grey;
+}
+
+.status {
+  text-anchor: middle;
+  display-align: center;
+  x: 5%;
+  y: 5%;
+  width: 90%;
+  height: 90%;
+  text-length:512;
+  font-size: 32;
+  fill: white;
+}
+
+.application-fill           { fill: fb-white; }
+.foreground-fill            { fill: fb-black }
+.background-fill            { fill: fb-orange; }
+
+#myButton #text {
+  text-buffer: "Start!";
+}
+
+.list-item {
+  height: 112;
+}
+
+.list-item text {
+  fill: "white";
+  x: 50%;
+  text-anchor: middle;
+  font-size: 24;
+}
+
+.line {
+  height: 6;
+  width: 130%;
+  fill: fb-white;
+  y: 100%-6;
+  x: -30;
+}
+
+.header text {
+  font-weight: bold;
+  fill: fb-orange;
+  font-size: 30;
+}
+
+.bg {
+  fill: fb-orange;
+  width: 100%;
+  height: 100%;
+  x: 0;
+  y: 0;
+}
+
+.hf {
+  fill: fb-white;
+  width: 130%;
+  height: 100%;
+  x: -30;
+  y: 0;
+}
+
+#touch {
+  width: 100%;
+  height: 100%-6;
+  x: 0;
+  y: 0;
+  opacity: 0;
+}
+
+.footer text {
+  font-weight: bold;
+  fill: fb-orange;
+  font-size: 30;
+}
+
+.footer {
+  fill: fb-white;
+}
+
+.settings-button #image {
+  href: btn_combo_list_p.png;
+}
+
+#settings-button {
+  x: 30;
+  y: 30;
+}
+
+text-length

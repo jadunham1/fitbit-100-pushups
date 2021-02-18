@@ -1,0 +1,29 @@
+{
+  "devDependencies": {
+    "@fitbit/sdk": "~5.0.0",
+    "@fitbit/sdk-cli": "^1.7.3"
+  },
+  "fitbit": {
+    "appUUID": "84b685db-710d-4c6f-991b-ead3ea4fb51a",
+    "appType": "app",
+    "appDisplayName": "100pushups",
+    "iconFile": "resources/icon.png",
+    "wipeColor": "#ff5722",
+    "requestedPermissions": [
+      "access_exercise"
+    ],
+    "buildTargets": [
+      "vulcan",
+      "atlas"
+    ],
+    "i18n": {
+      "en-US": {
+        "name": "100pushups"
+      }
+    },
+    "defaultLanguage": "en-US"
+  },
+  "scripts": {
+    "build": "fitbit-build"
+  }
+}
