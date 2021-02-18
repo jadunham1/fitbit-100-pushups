@@ -1,22 +1,8 @@
 import * as fs from "fs";
 import document from "document";
 import { PUSHUP_PROGRAM, MAX_OUT_INSTRUCTIONS, INITIAL_MAX_TEST_INSTRUCTIONS, RESET_MAX_INSTRUCTIONS } from "../common/globals.js";
-import { domain } from "process";
 
-/*
-let mainPage = document.getElementById("mainPage");
-let testPage = document.getElementById("testPage");
-let workoutPage = document.getElementById("workoutPage");
-let settingsPage = document.getElementById("settingsPage");
-let workoutSelectorPage = document.getElementById("workoutSelectorPage");
-*/
-/*
-mainPage.style.display="inline";
-testPage.style.display="none";
-workoutPage.style.display="none";
-settingsPage.style.display="none";
-workoutSelectorPage.style.display="none";
-*/
+
 let savedData = getSavedData();
 doMainMenuPage()
 
@@ -31,20 +17,13 @@ function doMainMenuPage() {
       savedData = getSavedData();
     }
     console.log(`Loaded initial saved data`)
-    let mainMenuButton = document.getElementById("main-menu-button")
-    console.log(`${mainMenuButton.text}`)
-    console.log(`Found menu button`)
-    mainMenuButton.text = PUSHUP_PROGRAM[savedData["workoutIndex"]]["name"]
 
+    // Menu Button
+    let mainMenuButton = document.getElementById("main-menu-button")
+    mainMenuButton.text = PUSHUP_PROGRAM[savedData["workoutIndex"]]["name"]
     mainMenuButton.onclick = function(evt) {
       console.log("Moving away from main page.")
       savedData = getSavedData();
-      if( isEmpty(savedData)) {
-        savedData["workoutIndex"] = 0
-        savedData["currentMax"] = 0
-        fs.writeFileSync("data.txt", savedData, "json");
-        doMaxTestPage("Initial Test", true)
-      }
       console.log("Starting workout with index " + savedData["workoutIndex"].toString());
       if( PUSHUP_PROGRAM[savedData["workoutIndex"]]["type"] == "workout") {
         let last_workout = false
@@ -64,7 +43,7 @@ function doMainMenuPage() {
       }
     }
 
-    // Settings Pages
+    // Settings Button
     let settingsButton = document.getElementById("settings-button")
     settingsButton.onclick = function(evt) {
       doSettingsPage()
@@ -109,7 +88,7 @@ function doWorkoutSelectorPage() {
 
 function doMaxTestPage(name, workout) {
   console.log("Starting a max tets page")
-  document.location.replace("maxout.view").then(() => {
+  document.location.assign("maxout.view").then(() => {
     let instructionsHeader = document.getElementById("instructionHeader");
     instructionsHeader.text = name;
     let instructions = document.getElementById("instructions");
@@ -231,10 +210,8 @@ function getWorkoutWithMax(data, curr_max) {
 
 function getSavedData() {
   let savedData = {}
-  try { // statements to try
+  try {
     savedData = fs.readFileSync("data.txt", "json");
-    console.log(`Loading from saved state. ${savedData}`)
-    console.log(`${savedData["workoutIndex"]}`)
     return savedData
   }
   catch (e) {
@@ -248,5 +225,5 @@ function isEmpty(obj) {
 }
 
 function getTumblerText(myObject) {
- return myObject.getElementById("item" + myObject.value).getElementById("my-value").text;
+  return myObject.getElementById("item" + myObject.value).getElementById("my-value").text;
 }
